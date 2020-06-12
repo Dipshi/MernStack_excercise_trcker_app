@@ -20,4 +20,4 @@ const Yogas = props => (
 
     </div>
   )
-  
+    

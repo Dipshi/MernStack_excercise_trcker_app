@@ -21,6 +21,10 @@ export default class Navbar extends Component {
           <li className="navbar-item">
           <Link to="/yogas" className="nav-link">Yogasanas</Link>
           </li>
+          <li className="navbar-item">
+          <Link to="/createyoga" className="nav-link">Add New Asana</Link>
+          </li>
+
 
         </ul>
         </div>
