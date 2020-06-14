@@ -78,16 +78,16 @@ export default class CreateYoga extends Component {
         formData.append('otherBenefits', this.state.otherBenefits)
         formData.append('file', this.state.image)
 
-        const yogas=
-        {
-            name:this.state.name,
-            description:this.state.description,
-            mainEffectiveArea:this.state.mainEffectiveArea,
-            otherBenefits:this.state.otherBenefits,
-            image:this.state.image
+        // const yogas=
+        // {
+        //     name:this.state.name,
+        //     description:this.state.description,
+        //     mainEffectiveArea:this.state.mainEffectiveArea,
+        //     otherBenefits:this.state.otherBenefits,
+        //     image:this.state.image
 
 
-        }
+        // }
         axios.post('http://localhost:5000/yogas/addyoga/',formData)
         .then(res => console.log(res.data))
         .catch((error) => {
@@ -147,12 +147,9 @@ export default class CreateYoga extends Component {
                         type="file"
                         name="file"
                         className="form-control"
-                        // value={this.state.image}
                         onChange={this.onChangeImage} 
                         ></input>
-                        {/* <img src={this.state.image}  alt="Image"/> */}
                     </div>
-                    {console.log(this.state.image)}
                     </div>
                         <div className="form-group">
                     <input type="submit" value="Create asan Log" className="btn btn-primary" />
