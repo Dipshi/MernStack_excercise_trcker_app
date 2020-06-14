@@ -4,7 +4,6 @@ let Yoga = require('../models/yogasanas.model');
 // import multer from 'multer'; 
 var multer  = require('multer')
 
-
 var Storage=multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, '/uploads/')

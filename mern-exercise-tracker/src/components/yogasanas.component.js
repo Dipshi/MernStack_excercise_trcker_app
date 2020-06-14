@@ -26,8 +26,7 @@ const Yoga = props => (
             <p><b>Other Benefits:</b>{props.yogas.otherBenefits}</p>
             <hr></hr>
             <p><b>Other:</b>{props.yogas.otherBenefits}</p>
-            <img src={`../../backend/uploads/${props.yogas.image}`} ></img>
-
+            {/* <img src={`../../backend/uploads/${props.yogas.image}`} ></img> */}
             <Example name={props.yogas.image} />
             </Card.Body>
             </Accordion.Collapse>
@@ -54,7 +53,7 @@ const Yoga = props => (
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <img src={`./uploads/${props.name}`} ></img>
+          <img src={require(`../../backend/uploads/${props.name}`)} ></img>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
