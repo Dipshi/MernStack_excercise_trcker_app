@@ -31,9 +31,7 @@ const Yoga = props => (
             </Card.Body>
             </Accordion.Collapse>
         </Card>
-  
-    </Accordion>
-
+      </Accordion>
 
   )
   function Example(props) {
@@ -48,19 +46,16 @@ const Yoga = props => (
           Launch demo modal
         </Button>
   
-        <Modal show={show} onHide={handleClose} animation={false}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
+        <Modal show={show} onHide={handleClose} animation={false}  size="sm" centered>
+          {/* <Modal.Header closeButton>
+            <Modal.Title id="example-custom-modal-styling-title">Modal heading</Modal.Title>
+          </Modal.Header> */}
           <Modal.Body>
-          <img src={require(`../../backend/uploads/${props.name}`)} ></img>
+          <img src={require(`../../backend/uploads/${props.name}`)} style={{alignItems:'center',alignItems: "center"}} className="center" ></img>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
             </Button>
           </Modal.Footer>
         </Modal>
