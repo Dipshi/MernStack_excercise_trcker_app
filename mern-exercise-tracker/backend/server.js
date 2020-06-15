@@ -2,7 +2,7 @@ const express =require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 
 require('dotenv').config();
 
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-const uri = process.env.ATLAS_URI;
+const uri = process.env.ATLAS_URI || process.env.MONGODB_URI;
 mongoose.connect(uri,{useUnifiedTopology: true,useNewUrlParser:true,useCreateIndex:true}).
     then(() => {
         console.log('Database sucessfully connected')
@@ -44,6 +44,15 @@ const yogaRoute=require('./routes/yogasanas')
 app.use('/exercises',exerciseRouter);
 app.use('/users',userRoute);
 app.use('/yogas',yogaRoute)
+
+if(process.env.NODE_ENV === 'production' )
+{
+    app.use(express.static('../build/'));
+    app.get('*',(req,res)=>{
+        res.sendFile(path.join(__dirname,'build','index.html'));
+        
+    });
+}
 
 
 app.listen(port,()=>{
